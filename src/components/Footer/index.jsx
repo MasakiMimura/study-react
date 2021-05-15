@@ -1,4 +1,4 @@
-import classes from "./Footer.module.css";
+import classes from "src/components/Footer/Footer.module.css";
 import Image from "next/image";
 
 export function Footer() {

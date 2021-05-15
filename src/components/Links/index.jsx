@@ -1,4 +1,4 @@
-import classes from "./Links.module.css";
+import classes from "src/components/Links/Links.module.css";
 
 const ITEMS = [
 	{
@@ -17,8 +17,7 @@ const ITEMS = [
 		description: "Discover and deploy boilerplate example Next.js projects.",
 	},
 	{
-		herf:
-			"https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+		herf: "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
 		title: "Deploy →",
 		description:
 			"Instantly deploy your Next.js site to a public URL with Vercel.",

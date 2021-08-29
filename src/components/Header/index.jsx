@@ -2,8 +2,8 @@ import Link from "next/link";
 import classes from "src/components/Header/Header.module.css";
 
 const NAV_TTEMS = [
+	{ href: "/", label: "Index" },
 	{ href: "/posts", label: "Posts" },
-	{ href: "/about", label: "About" },
 ];
 
 export const Header = () => {

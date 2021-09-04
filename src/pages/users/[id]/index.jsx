@@ -17,30 +17,37 @@ const useUser = () => {
 	};
 };
 
-const UsersId = () => {
+const UserComponent = () => {
 	const { data, error, isLoading } = useUser();
-	console.log(data);
+
+	if (isLoading) {
+		return <p>Loading...</p>;
+	}
+
+	if (error) {
+		return <p>{error.messsage}</p>;
+	}
 
 	return (
 		<div>
+			<h1>{data.name}</h1>
+			<ul>
+				<li>{data.email}</li>
+				<li>{data.username}</li>
+				<li>{data.address.city}</li>
+				<li>{data.phone}</li>
+				<li>{data.website}</li>
+				<li>{data.company.name}</li>
+			</ul>
+		</div>
+	);
+};
+
+const UsersId = () => {
+	return (
+		<div>
 			<Header />
-			{isLoading ? (
-				<div>Loading...</div>
-			) : error ? (
-				<div>error.message</div>
-			) : (
-				<div>
-					<h1>{data.name}</h1>
-					<ul>
-						<li>{data.email}</li>
-						<li>{data.username}</li>
-						<li>{data.address.city}</li>
-						<li>{data.phone}</li>
-						<li>{data.website}</li>
-						<li>{data.company.name}</li>
-					</ul>
-				</div>
-			)}
+			<UserComponent />
 		</div>
 	);
 };

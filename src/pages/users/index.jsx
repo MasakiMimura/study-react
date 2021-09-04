@@ -21,7 +21,7 @@ const useUsers = () => {
 
 const UserComponent = () => {
 	const { data, error, isLoading, isEmpty } = useUsers();
-	console.log(data);
+
 	if (isLoading) {
 		return <p>Loading...</p>;
 	}

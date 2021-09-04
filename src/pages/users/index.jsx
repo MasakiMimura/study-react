@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { Header } from "src/components/Header";
 import { fetcher } from "src/utils/fetcher";
 import useSWR from "swr";
@@ -8,18 +9,19 @@ const useUsers = () => {
 		"https://jsonplaceholder.typicode.com/users",
 		fetcher
 	);
+	console.log(data);
 
 	return {
 		data,
 		error,
-		loading: !data && !error,
+		isLoading: !data && !error,
 		isEmpty: data && data.length === 0,
 	};
 };
 
-const Users = () => {
+const UserComponent = () => {
 	const { data, error, isLoading, isEmpty } = useUsers();
-
+	console.log(data);
 	if (isLoading) {
 		return <p>Loading...</p>;
 	}
@@ -33,21 +35,28 @@ const Users = () => {
 	}
 
 	return (
+		<ol>
+			{data.map((user) => {
+				return (
+					<li key={user.id}>
+						<Link href={`/users/${user.id}`}>
+							<a>{`${user.name}} {${user.email}}`}</a>
+						</Link>
+					</li>
+				);
+			})}
+		</ol>
+	);
+};
+
+const Users = () => {
+	return (
 		<div>
 			<Head>
 				<title>Users Page</title>
 			</Head>
 			<Header />
-			<ol>
-				{data.map((user) => {
-					return (
-						<li key={user.id}>
-							<h2>{user.name}</h2>
-							<p>{user.email}</p>
-						</li>
-					);
-				})}
-			</ol>
+			<UserComponent />
 		</div>
 	);
 };

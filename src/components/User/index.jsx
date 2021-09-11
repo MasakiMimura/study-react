@@ -1,4 +1,8 @@
-const UserComponent = () => {
+import { PostsByUserId } from "src/components/Posts/PostsByUserId";
+
+const { useUser } = require("src/hooks/useUser");
+
+export const UserComponent = () => {
 	const { data, error, isLoading } = useUser();
 
 	if (isLoading) {
@@ -12,6 +16,7 @@ const UserComponent = () => {
 	return (
 		<div>
 			<h1>{data.name}</h1>
+			<h2>詳細</h2>
 			<ul>
 				<li>{data.email}</li>
 				<li>{data.username}</li>
@@ -20,6 +25,9 @@ const UserComponent = () => {
 				<li>{data.website}</li>
 				<li>{data.company.name}</li>
 			</ul>
+			<h2>投稿</h2>
+			<PostsByUserId id={data.id} />
+			<h2>コメント</h2>
 		</div>
 	);
 };

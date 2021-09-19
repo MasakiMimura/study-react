@@ -27,7 +27,9 @@ export const Post = () => {
 			<p className="text-xl text-gray-900 mt-2">{data?.body}</p>
 
 			<h2 className="text-lg font-bold mt-10">コメント一覧</h2>
-			<CommentsByPostsId id={data.id} />
+			<div className="mt-2">
+				<CommentsByPostsId id={data.id} />
+			</div>
 		</div>
 	);
 };

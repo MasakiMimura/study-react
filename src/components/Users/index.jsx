@@ -17,14 +17,14 @@ export const UsersComponent = () => {
 	}
 
 	return (
-		<ul className="grid grid-cols-3 gap-4">
+		<ul className="grid grid-cols-2 gap-6">
 			{data.map((user) => {
 				return (
 					<li key={user.id}>
 						<Link href={`/users/${user.id}`}>
 							<a className="block p-2 shadow rounded hover:bg-gray-100">
-								<h1 className="font-bold">{user.name}</h1>
-								<div className="text-sm">{user.email}</div>
+								<h1 className="text-xl font-bold truncate">{user.name}</h1>
+								<div className="text-lg truncate">{user.email}</div>
 							</a>
 						</Link>
 					</li>

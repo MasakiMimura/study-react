@@ -23,10 +23,10 @@ export const Posts = () => {
 					<li key={post.id}>
 						<Link href={`/posts/${post.id}`}>
 							<a className="block group">
-								<h1 className="font-bold group-hover:text-blue-400">
+								<h1 className="text-xl font-bold group-hover:text-blue-400">
 									{post.title}
 								</h1>
-								<p className="text-sm text-gray-500 group-hover:text-blue-400">
+								<p className="text-lg text-gray-500 group-hover:text-blue-400">
 									{post.body}
 								</p>
 							</a>

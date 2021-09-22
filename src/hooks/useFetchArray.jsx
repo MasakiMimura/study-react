@@ -1,7 +1,7 @@
-import useSWR from "swr";
+import useSWRImmutble from "swr/immutable";
 
 const useFetchArray = (url) => {
-	const { data, error } = useSWR(url);
+	const { data, error } = useSWRImmutble(url);
 
 	return {
 		data,

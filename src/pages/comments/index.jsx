@@ -3,13 +3,10 @@ import { CommentComponent } from "src/components/Comments";
 import { Header } from "src/components/Header";
 import { SWRConfig } from "swr";
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export const getStaticProps = async () => {
 	const COMMENTS_API_URL = `https://jsonplaceholder.typicode.com/comments`;
 	const comments = await fetch(COMMENTS_API_URL);
 	const commentsData = await comments.json();
-	await sleep(2000);
 
 	return {
 		props: {

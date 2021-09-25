@@ -3,12 +3,9 @@ import Head from "next/head";
 import { Layout } from "src/components/Layout";
 import { SWRConfig } from "swr";
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 const fetcher = async (...args) => {
 	const res = await fetch(...args);
 	const json = res.json();
-	await sleep(2000);
 	return json;
 };
 

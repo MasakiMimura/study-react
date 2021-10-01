@@ -4,7 +4,7 @@ import { SWRConfig } from "swr";
 
 export const getStaticPaths = async () => {
 	const comments = await fetch(
-		`https://jsonplaceholder.typicode.com/comments?_limit=10`
+		"https://jsonplaceholder.typicode.com/comments?_limit=10"
 	);
 	const commentsData = await comments.json();
 	const paths = commentsData.map((comment) => ({

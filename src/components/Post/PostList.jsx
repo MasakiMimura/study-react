@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useFetchArray } from "src/hooks/useFetchArray";
 import { API_URL } from "src/utils/const";
 
-export const Posts = () => {
+export const PostList = () => {
 	const { data, error, isLoading, isEmpty } = useFetchArray(`${API_URL}/posts`);
 
 	if (isLoading) {

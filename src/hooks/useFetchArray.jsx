@@ -17,9 +17,9 @@ export const useFetchArray = (url) => {
 // 	return useFetchArray(`${API_URL}/posts`);
 // };
 
-export const usePostsByUserId = (id) => {
-	return useFetchArray(id ? `${API_URL}/posts?userId=${id}` : null);
-};
+// export const usePostsByUserId = (id) => {
+// 	return useFetchArray(id ? `${API_URL}/posts?userId=${id}` : null);
+// };
 
 // users
 export const useUsers = () => {

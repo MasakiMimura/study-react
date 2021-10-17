@@ -1,4 +1,4 @@
-import { PostsByUserId } from "src/components/Posts/PostsByUserId";
+import { PostListByUserId } from "src/components/Post/PostListByUserId";
 
 const { useUser } = require("src/hooks/useUser");
 
@@ -26,7 +26,7 @@ export const UserComponent = () => {
 				<li>勤務先: {data.company.name}</li>
 			</ul>
 			<h2 className="text-xl font-bold mt-10">投稿</h2>
-			<PostsByUserId id={data.id} />
+			<PostListByUserId id={data.id} />
 		</div>
 	);
 };
